@@ -1,0 +1,29 @@
+body {
+    background-color: #f0f4ef;
+}
+
+header {
+    background-color: #b4cded;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav {
+    text-align: center;
+    background-color: black;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color:white
+}
+
+* {
+    padding: 5px;
+}
+
+footer {
+background-color: #344966;
+-webkit-text-fill-color: white;
+}
