@@ -1,0 +1,36 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+* {
+    border: solid 1px;
+}
+
+nav,
+ul {
+    display: flex;
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+}
+
+ul {
+    justify-content: flex-end;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
