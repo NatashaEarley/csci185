@@ -1,14 +1,32 @@
 * {
     box-sizing: border-box;
+    color: #111344;
 }
 
 body {
     margin: 0px;
-    font-family: Arial, sans-serif;
-    background-color: pink;
+    .junge-regular {
+        font-family: "Junge", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+    background-color: #DAE0F2;
 }
 
 p, a, li {
     line-height: 1.5em;
     font-size: 1.1em;
+}
+
+a:hover {
+    color: #EFE9E7;
+}
+
+a:link {
+    color: #52154E;
+}
+
+a:visited {
+    color: #ce45b7;
 }
