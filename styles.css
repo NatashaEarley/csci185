@@ -5,6 +5,7 @@
 body {
     margin: 0px;
     font-family: Arial, sans-serif;
+    background-color: pink;
 }
 
 p, a, li {
