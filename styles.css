@@ -5,16 +5,13 @@
 
 body {
     margin: 0px;
-    .junge-regular {
-        font-family: "Junge", cursive;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
     background-color: #DAE0F2;
-}
+    font-family: 'Courier New', Courier, monospace;
+    }
 
-p, a, li {
+p,
+a,
+li {
     line-height: 1.5em;
     font-size: 1.1em;
 }
