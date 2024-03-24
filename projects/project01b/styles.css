@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Bad+Script&family=Rock+Salt&display=swap');
-nav {
-    border: solid 2px black;
+h1 {
+    border: solid 2px #DB222A;
+    border-radius: 10px;
+    background-color:white;
 }
 
 body {
@@ -21,9 +23,11 @@ nav {
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
+    background-color: #222222;
 }
 a {
     text-decoration: none;
+    color: #00A8E8;
 }
 
 main {
@@ -31,6 +35,7 @@ main {
     grid-template-columns: 55vw 5vw 40vw;
     grid-template-rows: 5vh 30vh 35vh 10vh;
     max-width: 99vw;
+    background-color: #00A8E8;
 }
 
 main img {
@@ -58,6 +63,8 @@ h1 {
     font-family: "Rock Salt", cursive;
     font-weight: 400;
     font-style: normal;
+    font-size: 32px;
+    color: #DB222A;
 }
 
 main p {
@@ -69,6 +76,7 @@ main p {
     font-weight: 450;
     font-style: normal;
     font-size: 22px;
+    color: #222222;
 }
 
 footer {
@@ -76,12 +84,14 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 5vh;
-    max-width: 98vw;
+    height: 7vh;
+    max-width: 99vw;
     font-family: "Arapey", serif;
     font-weight: 450;
     font-style: normal;
     font-size: 18px;
+    background-color: #222222;
+    color: #ff6978;
 }
 
 @media (max-width: 720px) {
