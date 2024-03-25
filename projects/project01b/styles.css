@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Bad+Script&family=Rock+Salt&display=swap');
 
 body {
-    display: grid;
+    max-height: 100vh;
+    max-width: 100vw;
 }
 
 nav img {
-    height: 8vh;
+    height: 12vh;
     margin: 5px;
-    border: #FF0800 solid 2px;
+    border: #FF0800 solid 3px;
 }
 
 nav {
@@ -16,9 +17,9 @@ nav {
     align-items: center;
     justify-content: space-around;
     font-family: "Bad Script", cursive;
-    font-weight: 400;
+    font-weight: 550;
     font-style: normal;
-    font-size: 22px;
+    font-size: 25px;
     background-color: #222222
 }
 a {
@@ -33,8 +34,7 @@ a:hover {
 main {
     display: grid;
     grid-template-columns: 55vw 5vw 40vw;
-    grid-template-rows: 5vh 30vh 35vh 10vh;
-    max-width: 99vw;
+    grid-template-rows: 5vh 25vh 15vh 31vh;
     background-color: #00A8E8;
 }
 
@@ -42,13 +42,12 @@ main img {
     max-height: 65vh;
     grid-column: 3 /span 1;
     grid-row: 2/5;
-    border:#222222 3px solid
+    border:#222222 5px solid
 }
 
 
 header {
     grid-column: 1 /span 2;
-    max-width: 99vw;
 }
 
 
@@ -77,9 +76,9 @@ main p {
     margin: 50px;
     margin-left: 15vw;
     font-family: "Arapey", serif;
-    font-weight: 570;
+    font-weight: 550;
     font-style: normal;
-    font-size: 22px;
+    font-size: 25px;
     color: #222222;
 }
 
@@ -89,7 +88,7 @@ footer {
     justify-content: center;
     align-items: flex-start;
     height: 7vh;
-    max-width: 99vw;
+
     background-color: #222222;
 }
 
@@ -105,6 +104,9 @@ footer p {
 
     body {
         grid-template-columns: 1fr;
+    }
+    nav {
+        font-size: 18px;
     }
 
     main {

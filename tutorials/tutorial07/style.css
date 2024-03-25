@@ -155,3 +155,32 @@ h1 {
 .unca nav {
     border-bottom: solid 1px #434a6c;
 }
+
+.dyslexia-mode {
+    letter-spacing: 0.35ch;
+    word-spacing: 1.225ch; 
+    font-variant-ligatures: none;
+    font-weight: 600;
+    font-size: 150%;
+}
+
+.dyslexia-mode div {
+    line-height: 2.0;
+ }
+ 
+ .dyslexia-mode div p {
+    margin-top: 3.5em;
+    padding-left: 20vw;
+    padding-right: 20vw;
+ }
+
+ .dyslexia-mode strong {
+    color: #000;
+  }
+
+  .dyslexia-mode h2 {
+    border: none; border-bottom: thin grey solid; 
+    transform: none; 
+    background-color: inherit; 
+    margin-bottom: 1em; padding-left: 20vw; 
+  }
