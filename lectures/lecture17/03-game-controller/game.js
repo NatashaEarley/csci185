@@ -22,6 +22,30 @@ function drawPlayer() {
 function movePlayer(ev) {
     // open the console in your browser to see what happens :)
     console.log(ev.code);
+    if (ev.code === "ArrowUp"){
+        y = y - 5;
+    }
+    else if (ev.code === "ArrowDown"){
+        y = y + 5;
+    }
+    else if (ev.code === "ArrowRight"){
+        x = x + 5;
+    }
+    else if (ev.code === "ArrowLeft"){
+        x = x - 5;
+    }
+    else if (ev.code === "Space"){
+        width = width + 5
+    }
+    else if (ev.code === "Escape"){
+        width = width - 5
+    }
+    else if (ev.code === "KeyB"){
+        color = "blue"
+    }
+    else if (ev.code === "KeyR") {
+        color = "red"
+    }
 
     // re-draw the player
     drawPlayer();
