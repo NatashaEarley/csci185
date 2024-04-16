@@ -8,7 +8,7 @@ const studentList = [
     {
         name: "Atlas",
         image_url: "https://i.pravatar.cc/150?id=1",
-        favorite_color: getRandomColor(),
+        favorite_color: "aquamarine",
     },
     {
         name: "Avery",
@@ -18,7 +18,7 @@ const studentList = [
     {
         name: "Cali",
         image_url: "https://i.pravatar.cc/150?id=3",
-        favorite_color: getRandomColor(),
+        favorite_color:"yellow",
     },
     {
         name: "Cameron",
@@ -113,17 +113,16 @@ function showStudents() {
     for (let i = 0; i < studentList.length; i++) {
         console.log(i, studentList[i]);
         console.log(i, studentList[i].favorite_color);
-        const myTemplate =
+        const myTemplate = `
             <section class="card">
-                <img src="https://i.pravatar.cc/150?id=1" />
-                <p>Name: <strong>Walter</strong></p>
-                <p>Favorite Color: <strong>yellow</strong></p>
+                <img src="${studentList[i].image_url}" />               <p>Name: <strong>${studentList[i].name}</strong></p>
+                <p>Favorite Color: <strong>${studentList[i].favorite_color}</strong></p>
             </section>
-            `;
-            containerEl;insertAdjacentHTML("afterbegin", myTemplate);`
+        `;
+        containerEl.insertAdjacentHTML("afterbegin", myTemplate);
     }
 }
 
-        function clearContainer() {
-            containerEl.innerHTML = "";
-        }
+function clearContainer() {
+    containerEl.innerHTML = "";
+}
