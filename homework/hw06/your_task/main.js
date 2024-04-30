@@ -13,25 +13,27 @@ function search(ev) {
 }
 
 async function getTracks(term) {
-    const url = `${baseURL}?q=${term}&type=album&limit=5`;
+    const url = `${baseURL}?q=${term}&type=track&limit=1`;
     const request = await fetch(url);
     const data = await request.json();
+    console.log(data[0].image_url);
+
     const snippet = `<section class="track-item preview">
-    // <img src="${data[0].image_url}">
-    // <i class="fas play-track fa-play" aria-hidden="true"></i>
-    // <div class="label">
-    //     <h2>Black Swan</h2>
-    //     <p>
-    //         BTS
-    //     </p>
-    // </div>
-    // </section>`;
+     <img src="${data[0]}">
+     <i class="fas play-track fa-play" aria-hidden="true"></i>
+     <div class="label">
+         <h2>${data[0].name}</h2>
+         <p>
+            ${data[0].artist.name}
+         </p>
+     </div>
+     </section>`;
     const container = document.querySelector('#tracks');
     container.innerHTML = snippet;
 }
 
 async function getAlbums(term) {
-    const url = `${baseURL}?q=${term}&type=artist&limit=1`;
+    const url = `${baseURL}?q=${term}&type=almbum&limit=1`;
     const request = await fetch(url);
     const data = await request.json();
 
@@ -50,7 +52,7 @@ async function getArtist(term) {
     const snippet = `<section class="artist-card" id="3Nrfpe0tUJi4K4DXYWgMUX">
     <div>
         <img src="${data[0].image_url}">
-        <h2>${data[0].name}</h2>
+        <h2>"${data[0].name}"</h2>
         <div class="footer">
             <a href="${data[0].spotify_url}" target="_blank">
                 view on spotify
