@@ -73,25 +73,31 @@ async function getTracks(term) {
 }
 
 async function getAlbums(term) {
-    const url = `${baseURL}?q=${term}&type=album&limit=1`;
+    const url = `${baseURL}?type=album&q=${term}`;
     const request = await fetch(url);
     const data = await request.json();
 
-    const snippet = `<section class="album-card" id="2lATw9ZAVp7ILQcOKPCPqp">
-    <div>
-        <img src="${data[0].images_url}">
-        <h2>${data[0].name}</h2>
-        <div class="footer">
-            <a href="${data[0].spotify_url}">
-                view on spotify
-            </a>
-        </div>
-    </div>
-</section>`;
+    const container = document.querySelector('#albums');
 
-   const container = document.querySelector('#albums');
-   container.innerHTML = snippet;
-
+    if (data && data.length > 0) {
+        data.forEach(album => {
+            const snippet = `
+            <section class="album-card" id="${album.id}">
+                <div>
+                    <img src="${data[0].images_url}">
+                    <h2>${album.name}</h2>
+                    <div class="footer">
+                        <a href="${album.spotify_url}" target="_blank">
+                            View on Spotify
+                        </a>
+                    </div>
+                </div>
+            </section>`;
+            container.insertAdjacentHTML('beforeend', snippet);
+        });
+    } else {
+        container.innerHTML = "<p>No albums were returned.</p>";
+    }
 }
 
 async function getArtist(term) {
