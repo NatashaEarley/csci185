@@ -16,10 +16,49 @@ async function getTracks(term) {
     const url = `${baseURL}?q=${term}&type=track&limit=1`;
     const request = await fetch(url);
     const data = await request.json();
-    console.log(data[0].image_url);
 
     const snippet = `<section class="track-item preview">
-     <img src="${data[0]}">
+     <img src="${data[0].album.image_url}">
+     <i class="fas play-track fa-play" aria-hidden="true"></i>
+     <div class="label">
+         <h2>${data[0].name}</h2>
+         <p>
+            ${data[0].artist.name}
+         </p>
+     </div>
+     </section>
+     <section class="track-item preview">
+     <img src="${data[0].album.image_url}">
+     <i class="fas play-track fa-play" aria-hidden="true"></i>
+     <div class="label">
+         <h2>${data[0].name}</h2>
+         <p>
+            ${data[0].artist.name}
+         </p>
+     </div>
+     </section>
+     <section class="track-item preview">
+     <img src="${data[0].album.image_url}">
+     <i class="fas play-track fa-play" aria-hidden="true"></i>
+     <div class="label">
+         <h2>${data[0].name}</h2>
+         <p>
+            ${data[0].artist.name}
+         </p>
+     </div>
+     </section>
+     <section class="track-item preview">
+     <img src="${data[0].album.image_url}">
+     <i class="fas play-track fa-play" aria-hidden="true"></i>
+     <div class="label">
+         <h2>${data[0].name}</h2>
+         <p>
+            ${data[0].artist.name}
+         </p>
+     </div>
+     </section>
+     <section class="track-item preview">
+     <img src="${data[0].album.image_url}">
      <i class="fas play-track fa-play" aria-hidden="true"></i>
      <div class="label">
          <h2>${data[0].name}</h2>
@@ -28,14 +67,30 @@ async function getTracks(term) {
          </p>
      </div>
      </section>`;
+
     const container = document.querySelector('#tracks');
     container.innerHTML = snippet;
 }
 
 async function getAlbums(term) {
-    const url = `${baseURL}?q=${term}&type=almbum&limit=1`;
+    const url = `${baseURL}?q=${term}&type=album&limit=1`;
     const request = await fetch(url);
     const data = await request.json();
+
+    const snippet = `<section class="album-card" id="2lATw9ZAVp7ILQcOKPCPqp">
+    <div>
+        <img src="${data[0].images_url}">
+        <h2>${data[0].name}</h2>
+        <div class="footer">
+            <a href="${data[0].spotify_url}">
+                view on spotify
+            </a>
+        </div>
+    </div>
+</section>`;
+
+   const container = document.querySelector('#albums');
+   container.innerHTML = snippet;
 
 }
 
@@ -44,10 +99,6 @@ async function getArtist(term) {
     console.log(url);
     const request = await fetch(url);
     const data = await request.json();
-    console.log(data);
-    console.log(data[0].name);
-    console.log(data[0].image_url);
-    console.log(data[0].spotify_url);
 
     const snippet = `<section class="artist-card" id="3Nrfpe0tUJi4K4DXYWgMUX">
     <div>
