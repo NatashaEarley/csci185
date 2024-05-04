@@ -49,20 +49,20 @@ async function getTracks(term) {
 
 
 async function getAlbums(term) {
-    const url = `${baseURL}?q=${term}&type=album&limit=1`;
+    const url = `${baseURL}?type=track&q=${term}`;
     const request = await fetch(url);
-    const albumData = await request.json();
+    const data = await request.json();
     document.querySelector("#albums").innerHTML = "";
 
     for (let i = 0; i < 5; i++) {
-        const albums = albumData[i];
+        const track = albumData[i];
         const template = `
         <section class="album-card" id="2lATw9ZAVp7ILQcOKPCPqp">
         <div>
-            <img src="${albums.images_url}">
-            <h2>${albums.name}</h2>
+            <img src="${track.album.images_url}">
+            <h2>${track.album.name}</h2>
             <div class="footer">
-                <a href="${albums.uri}" target="_blank">
+                <a href="${track.album.herf}" target="_blank">
                     view on spotify
                 </a>
             </div>
