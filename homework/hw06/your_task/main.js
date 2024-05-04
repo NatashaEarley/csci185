@@ -12,91 +12,64 @@ function search(ev) {
     }
 }
 
-async function getTracks(term) {
-    const url = `${baseURL}?q=${term}&type=track&limit=1`;
-    const request = await fetch(url);
-    const data = await request.json();
-
-    const snippet = `<section class="track-item preview">
-     <img src="${data[0].album.image_url}">
-     <i class="fas play-track fa-play" aria-hidden="true"></i>
-     <div class="label">
-         <h2>${data[0].name}</h2>
-         <p>
-            ${data[0].artist.name}
-         </p>
-     </div>
-     </section>
-     <section class="track-item preview">
-     <img src="${data[0].album.image_url}">
-     <i class="fas play-track fa-play" aria-hidden="true"></i>
-     <div class="label">
-         <h2>${data[0].name}</h2>
-         <p>
-            ${data[0].artist.name}
-         </p>
-     </div>
-     </section>
-     <section class="track-item preview">
-     <img src="${data[0].album.image_url}">
-     <i class="fas play-track fa-play" aria-hidden="true"></i>
-     <div class="label">
-         <h2>${data[0].name}</h2>
-         <p>
-            ${data[0].artist.name}
-         </p>
-     </div>
-     </section>
-     <section class="track-item preview">
-     <img src="${data[0].album.image_url}">
-     <i class="fas play-track fa-play" aria-hidden="true"></i>
-     <div class="label">
-         <h2>${data[0].name}</h2>
-         <p>
-            ${data[0].artist.name}
-         </p>
-     </div>
-     </section>
-     <section class="track-item preview">
-     <img src="${data[0].album.image_url}">
-     <i class="fas play-track fa-play" aria-hidden="true"></i>
-     <div class="label">
-         <h2>${data[0].name}</h2>
-         <p>
-            ${data[0].artist.name}
-         </p>
-     </div>
-     </section>`;
-
-    const container = document.querySelector('#tracks');
-    container.innerHTML = snippet;
+function playTrack(trackId) {
+    const template = `<iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=0" 
+    width="100%" 
+    height="152" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy"></iframe>`
+    document.querySelector("#artist").innerHTML = template;
 }
 
-async function getAlbums(term) {
-    const url = `${baseURL}?type=album&q=${term}`;
+async function getTracks(term) {
+    const url = `${baseURL}?type=track&q=${term}`;
     const request = await fetch(url);
-    const data = await request.json();
+    const trackData = await request.json();
+    document.querySelector("#tracks").innerHTML = "";
 
-    const container = document.querySelector('#albums');
-
-    if (data && data.length > 0) {
-        data.forEach(album => {
-            const snippet = `
-            <section class="album-card" id="${album.id}">
-                <div>
-                    <img src="${data[0].images_url}">
-                    <h2>${album.name}</h2>
-                    <div class="footer">
-                        <a href="${album.spotify_url}" target="_blank">
-                            View on Spotify
-                        </a>
-                    </div>
+    for (let i = 0; i < 5; i++) {
+        const track = trackData[i];
+        const template = `
+            <section class="track-item preview" onclick="playTrack('${track.id}')">
+                <img src="${track.album.image_url}">
+                <i class="fas play-track fa-play" aria-hidden="true"></i>
+                <div class="label">
+                    <h2>${track.name}</h2>
+                    <p>${track.artist.name}</p>
                 </div>
-            </section>`;
-            container.insertAdjacentHTML('beforeend', snippet);
-        });
-    } else {
-        container.innerHTML = "<p>No albums were returned.</p>";
+            </section>
+        `;
+        document.querySelector("#tracks").innerHTML += template;
+    }
+}
+
+
+
+async function getAlbums(term) {
+    const url = `${baseURL}?q=${term}&type=album&limit=1`;
+    const request = await fetch(url);
+    const albumData = await request.json();
+    document.querySelector("#albums").innerHTML = "";
+
+    for (let i = 0; i < 5; i++) {
+        const albums = albumData[i];
+        const template = `
+        <section class="album-card" id="2lATw9ZAVp7ILQcOKPCPqp">
+        <div>
+            <img src="${albums.images_url}">
+            <h2>${albums.name}</h2>
+            <div class="footer">
+                <a href="${albums.uri}" target="_blank">
+                    view on spotify
+                </a>
+            </div>
+        </div>
+    </section>
+        `;
+        document.querySelector("#albums").innerHTML += template;
     }
 }
 
