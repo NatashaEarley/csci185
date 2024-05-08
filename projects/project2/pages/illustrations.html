@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./page_styles.css">
     <title>Illustrations</title>
     <meta charset="utf-8" />
@@ -36,7 +37,7 @@
             <div class="swiper-pagination"></div>
         </div>
         <h2>Traditional Art</h2>
-        <div class="swiper mySwiper">
+        <div class="swiper mySwiper2"> 
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="../images/Self Portrait.jpg" alt=""></div>
               <div class="swiper-slide"><img src="../images/20210322_180219~3.jpg" alt=""></div>
@@ -45,7 +46,7 @@
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination2"></div>
           </div>
         </div>
     </main>
@@ -55,20 +56,4 @@
     </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var swiper = new Swiper(".mySwiper", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                type: "progressbar",
-            },
-            loop: true 
-        });
-    });
-</script>
 
