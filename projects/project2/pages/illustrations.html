@@ -4,13 +4,17 @@
 <head>
     <link rel="stylesheet" href="./page_styles.css">
     <title>Illustrations</title>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
     <header>
         <nav>
             <a href="../index.html"><img src="../images/LionLogo.jpg"
-                alt="A logo of a lion holding a digital art pen between their teeth."></a>
+                    alt="A logo of a lion holding a digital art pen between their teeth."></a>
             <a href="../pages/animations.html">Animations</a>
             <a href="../pages/storyboards.html">Storyboards</a>
             <a href="../pages/illustrations.html">Illustrations</a>
@@ -19,17 +23,52 @@
     </header>
     <main>
         <h1>Illustrations</h1>
-        <img src="../images/Self Portrait.jpg" alt="">
-        <img src="../images/Nearley_FoxDigitalPainting_P3.jpg" alt="">
-        <img src="../images/LionLogo.jpg" alt="">
-        <img src="../images/Posepractice_1.png" alt="">
-        <img src="../images/Posepractice_2.png" alt="">
-        <img src="../images/20210510_133128~2.jpg" alt="">
-        <img src="../images/20210322_180219~3.jpg" alt="">
-        <img src="../images/20210322_180337~3.jpg" alt="">
+        <h2>Digital Art</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../images/LionLogo.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../images/Nearley_FoxDigitalPainting_P3.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../images/Posepractice_1.png" alt=""></div>
+                <div class="swiper-slide"><img src="../images/Posepractice_2.png" alt=""></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <h2>Traditional Art</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="../images/Self Portrait.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="../images/20210322_180219~3.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="../images/20210510_133128~2.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="../images/20210322_180337~3.jpg" alt=""></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
     </main>
 
     <footer>
         <p>Copywrite Natasha Earley, 2024</p>
     </footer>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+            },
+            loop: true 
+        });
+    });
+</script>
+
